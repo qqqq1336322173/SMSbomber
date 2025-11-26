@@ -19,7 +19,7 @@
 #
 
 import sys
-import Queue
+import queue as Queue
 import threading
 
 
@@ -100,11 +100,11 @@ class ThreadPool():
 
     def show_results(self):
         for result in self._get_results(self.out_queue):
-            print 'Result:', result
+            print('Result:', result)
 
     def show_errors(self):
         for etyp, err in self._get_results(self.err_queue):
-            print 'Error:', etyp, err
+            print('Error:', etyp, err)
 
     def destroy(self):
         # order is important: first, request all threads to stop...:
